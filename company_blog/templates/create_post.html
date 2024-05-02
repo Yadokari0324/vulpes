@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block content %}
+    <section id="blog_post">
+        <div class="container my-3">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>ブログ投稿</h4>
+                        </div>
+                        <div class="card-body">
+                            <form method="POST" enctype="multipart/form-data">
+                                {{ form.hidden_tag() }}
+                                <div class="mb-3">
+                                    {{ form.title.label(class="form-control-label") }}
+                                    {{ render_field(form.title, class="form-control") }}
+                                </div>
+                                <div class="mb-3">
+                                    {{ form.category.label(class="form-control-label") }}
+                                    {{ render_field(form.category, class="form-control") }}
+                                </div> 
+                                <div class="mb-3">
+                                    {{ form.summary.label(class="form-control-label") }}
+                                    {{ render_field(form.summary, class="form-control") }}
+                                </div> 
+                                <div class="mb-3">
+                                    {{ form.text.label(class="form-control-label") }}
+                                    {{ render_field(form.text, class="form-control form-contorl-lg") }}
+                                    <script>
+                                        CKEDITOR.replace( 'text' );
+                                    </script>
+                                </div> 
+                                <div class="mb-3">
+                                    {{ form.picture1.label(class="form-control-label") }}
+                                    <br>
+                                    {% if form.picture1.data %}
+                                    <div style="text-align: left;">
+                                        <img src="{{ url_for('static', filename='featured_image/' + form.picture1.data) }}">
+                                    </div>
+                                    {% endif %}
+                                    <br>
+                                    {{ render_field(form.picture1, class="form-control-file") }}
+                                </div>
+                                <div class="mb-3">
+                                    {{ form.picture2.label(class="form-control-label") }}
+                                    <br>
+                                    {% if form.picture2.data %}
+                                    <div style="text-align: left;">
+                                        <img src="{{ url_for('static', filename='featured_image/' + form.picture2.data) }}">
+                                    </div>
+                                    {% endif %}
+                                    <br>
+                                    {{ render_field(form.picture2, class="form-control-file") }}
+                                </div>
+                                <div class="mb-3">
+                                    {{ form.picture3.label(class="form-control-label") }}
+                                    <br>
+                                    {% if form.picture3.data %}
+                                    <div style="text-align: left;">
+                                        <img src="{{ url_for('static', filename='featured_image/' + form.picture3.data) }}">
+                                    </div>
+                                    {% endif %}
+                                    <br>
+                                    {{ render_field(form.picture3, class="form-control-file") }}
+                                </div>          
+                                <div class="mb-3">
+                                    {{ form.picture4.label(class="form-control-label") }}
+                                    <br>
+                                    {% if form.picture4.data %}
+                                    <div style="text-align: left;">
+                                        <img src="{{ url_for('static', filename='featured_image/' + form.picture4.data) }}">
+                                    </div>
+                                    {% endif %}
+                                    <br>
+                                    {{ render_field(form.picture4, class="form-control-file") }}
+                                </div>          
+                                <div class="mb-3">
+                                    {{ form.picture5.label(class="form-control-label") }}
+                                    <br>
+                                    {% if form.picture5.data %}
+                                    <div style="text-align: left;">
+                                        <img src="{{ url_for('static', filename='featured_image/' + form.picture5.data) }}">
+                                    </div>
+                                    {% endif %}
+                                    <br>
+                                    {{ render_field(form.picture5, class="form-control-file") }}
+                                </div>          
+                                <div class="mb-3">
+                                    {{ form.picture6.label(class="form-control-label") }}
+                                    <br>
+                                    {% if form.picture6.data %}
+                                    <div style="text-align: left;">
+                                        <img src="{{ url_for('static', filename='featured_image/' + form.picture6.data) }}">
+                                    </div>
+                                    {% endif %}
+                                    <br>
+                                    {{ render_field(form.picture6, class="form-control-file") }}
+                                </div>          
+                                <div class="mb-3">
+                                    {{ form.picture7.label(class="form-control-label") }}
+                                    <br>
+                                    {% if form.picture7.data %}
+                                    <div style="text-align: left;">
+                                        <img src="{{ url_for('static', filename='featured_image/' + form.picture7.data) }}">
+                                    </div>
+                                    {% endif %}
+                                    <br>
+                                    {{ render_field(form.picture7, class="form-control-file") }}
+                                </div>          
+                                <div class="mb-3">
+                                    {{ form.picture8.label(class="form-control-label") }}
+                                    <br>
+                                    {% if form.picture8.data %}
+                                    <div style="text-align: left;">
+                                        <img src="{{ url_for('static', filename='featured_image/' + form.picture8.data) }}">
+                                    </div>
+                                    {% endif %}
+                                    <br>
+                                    {{ render_field(form.picture8, class="form-control-file") }}
+                                </div>          
+                                <div class="mb-3">
+                                    {{ form.picture9.label(class="form-control-label") }}
+                                    <br>
+                                    {% if form.picture9.data %}
+                                    <div style="text-align: left;">
+                                        <img src="{{ url_for('static', filename='featured_image/' + form.picture9.data) }}">
+                                    </div>
+                                    {% endif %}
+                                    <br>
+                                    {{ render_field(form.picture9, class="form-control-file") }}
+                                </div>          
+                                <div class="mb-3">
+                                    {{ form.picture10.label(class="form-control-label") }}
+                                    <br>
+                                    {% if form.picture10.data %}
+                                    <div style="text-align: left;">
+                                        <img src="{{ url_for('static', filename='featured_image/' + form.picture10.data) }}">
+                                    </div>
+                                    {% endif %}
+                                    <br>
+                                    {{ render_field(form.picture10, class="form-control-file") }}
+                                </div>     
+                                <div class="container mb-3">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            {{ form.submit(class="btn btn-success w-100") }}
+                                        </div>
+                                    </div>
+                                </div>                     
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

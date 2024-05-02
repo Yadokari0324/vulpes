@@ -1,0 +1,15 @@
+{% extends "base2.html" %}
+{% block content %}
+    <div class="content">
+        <form action="/predict" method="POST">
+            <input type="number" name="name1">
+            <input type="number" name="name2">
+            <input type="number" name="name3">
+            <input type="number" name="name4">
+            <input type="submit" value='送信'>
+        </form>
+    </div>
+
+
+    
+{% endblock %}
