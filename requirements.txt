@@ -18,3 +18,5 @@ click==8.0.4
 requests==2.27.1
 transformers==4.40.0
 pandas==2.2.1
+torch==2.2.0+cpu
+transformers==4.40.0
