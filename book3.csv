@@ -1,18 +1,18 @@
-﻿id,function,design_role_model,design_html,design_css_position,design_css_color,error,release,image_url,link_url,name,explanatory_text
-1,1,3,2,5,4,5,1,image1.jpg,d,ChatGPT,1
-2,1,3,2,5,4,1,5,image2.jpg,dd,Adobe Color,1
-3,1,3,2,5,4,5,1,image3.jpg,d,Bootstrap,1
-4,1,3,2,5,4,5,1,image4.jpg,d,SANKOU,1
-5,1,3,2,5,4,5,1,image5.jpg,d,Hugging Face,1
-6,1,3,2,5,4,5,1,image6.jpg,d,Mosyasyugyo,1
-7,1,3,2,5,4,5,1,image7.jpg,d,Codejump,1
-8,1,3,2,5,4,5,1,image8.jpg,d,1GOO,1
-9,1,3,2,5,4,5,1,image9.jpg,d,Screenshot_to_Code,1
-10,1,3,2,5,4,5,1,image10.jpg,https://gemini.google.com/app,Gemini,1
-11,1,3,2,5,4,5,1,image11.jpg,d,Web_design_idea,1
-12,1,3,2,5,4,5,1,image12.jpg,https://webdesignclip.com/,WebDesignClip,1
-13,1,3,2,5,4,5,1,image13.jpg,https://io3000.com/,I/O_3000,1
-14,1,3,2,5,4,5,1,image14.jpg,https://design-library.jp/,BANNER_LIBRARY,1
-15,1,3,2,5,4,5,1,image15.jpg,https://coolors.co/,Coolors,1
-16,1,3,2,5,4,5,1,image16.jpg,https://www.canva.com/,Canva,1
-17,1,3,2,5,4,5,1,image17.jpg,https://www.behance.net/,Behance,1
+﻿id,function,design_role_model,design_html,design_css_position,design_css_color,error,release,image_url,link_url,name,explanatory_text,,,
+1,10,0,30,30,0,50,1,image1.jpg,https://openai.com/chatgpt,ChatGPT,無限の知識、手の届くところに,,,
+2,10,0,0,0,50,0,1,image2.jpg,https://color.adobe.com/ja/,Adobe Color,色の魔法で、無限の可能性を,,,
+3,10,0,50,50,30,0,1,image3.jpg,https://getbootstrap.jp/,Bootstrap,Webデザインを迅速に構築,,,
+4,10,50,20,20,20,0,1,image4.jpg,https://sankoudesign.com/,SANKOU,想像力の限界を超えて,,,
+5,10,0,0,0,0,0,1,image5.jpg,https://huggingface.co/,Hugging Face,最先端のAIモデルを提供,,,
+6,10,40,50,50,10,0,1,image6.jpg,https://moshashugyo.com/,Mosyasyugyo,美しいデザインは修行の積み重ねから,,,
+7,10,40,50,50,10,0,1,image7.jpg,https://code-jump.com/,Codejump,未来のWebデザイナーへの鍛錬場,,,
+8,10,50,20,20,20,0,1,image8.jpg,https://1guu.jp/,1GOO,優れたサイトとの出会いはここから,,,
+9,10,30,50,50,30,0,1,image9.jpg,https://screenshottocode.com/,Screenshot_to_Code,スクショ１枚でデザインを作成,,,
+10,10,0,30,30,0,50,1,image10.jpg,https://gemini.google.com/app,Gemini,スクショで効率的にエラー解決,,,
+11,10,40,50,50,0,0,1,image11.jpg,https://coco-factory.jp/ugokuweb/,Web_design_idea,動くWebサイトを簡単に実現,,,
+12,10,50,20,20,20,0,1,image12.jpg,https://webdesignclip.com/,WebDesignClip,世界中のWebデザインを探索,,,
+13,10,50,20,20,20,0,1,image13.jpg,https://io3000.com/,I/O_3000,アイデアを現実に変えよう,,,
+14,10,50,20,20,20,0,1,image14.jpg,https://design-library.jp/,BANNER_LIBRARY,インスピレーションはここから,,,
+15,10,0,0,0,50,0,1,image15.jpg,https://coolors.co/,Coolors,独自のカラーパレットを簡単に作成,,,
+16,10,0,0,0,0,0,1,image16.jpg,https://www.canva.com/,Canva,プロのデザインを誰でも実現,,,
+17,10,50,20,20,20,0,1,image17.jpg,https://www.behance.net/,Behance,クリエイティブの旅はここから,,,

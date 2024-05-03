@@ -26,31 +26,22 @@
         </div>
       </section>            
 
-{% for first_one_img in first_one %}
+{% for first_one_img, first_one_link, first_one_des, first_one_name in I %}
   <link rel="stylesheet" href="">
     <div class="bg-white p-5">
       <div class="flex justify-between space-x-4">
         <!-- Product 1 -->
-        <a href="https://openai.com/chatgpt">
         <div class="w-1/2 border p-2">
-          <img src="../static/featured_image/image{{ first_one_img }}.jpg" alt="" class="img-1">
+          <a href="{{ first_one_link }}">
+          <img src="../static/featured_image/image{{ first_one_img }}.jpg" alt="" class="img-1 img-1-3">
             <div class="flex justify-between items-center mb-2">
             </div>
             <div class="text-center mt-2">
-              <div class="text-red-500 mb-1">
-                第1位
-              </div>
               <div class="font-bold">
-                ナウフーズ L-システイン サプリメント 500mg 100粒 NOW Foods
-              </div>
-              <div class="text-sm">
-                L-Cysteine 栄養補助 錠剤 アミノ酸 約30〜100日分 輸入 セット
+                {{ first_one_des }}
               </div>
               <div class="text-red-600 font-bold text-lg mt-2">
-                ¥1,533
-              </div>
-              <div class="text-xs mt-1">
-                  迅速発送のある「美」を目指す方に！
+                {{ first_one_name }}
               </div>
             </div>
           </a>
@@ -58,23 +49,22 @@
  
 {% endfor%}   
 
-{% for next_two_img in next_two %} 
+{% for next_two_img, next_two_link, next_two_des, next_two_name in II %}
 <!-- Product 2 -->
   <div class="w-1/4 border p-2">
+    <a href="{{ next_two_link }}">
     <img src="../static/featured_image/image{{ next_two_img }}.jpg" alt="" class="img-2">
       <div class="flex justify-between items-center mb-2">
       </div>
       <div class="text-center mt-2">
-        <div class="text-red-500 mb-1">
-          第2位
-        </div>
         <div class="font-bold">
-          ナウフーズ 鉄 サプリメント 36mg 90粒 NOW Foods Iron バランス良い アイアン エンジンパワー増進 90日分 Double Strength 輸入 セット
+          {{ next_two_des }}
         </div>
         <div class="text-red-600 font-bold text-lg mt-2">
-          ¥1,447
+          {{ next_two_name }}
         </div>
       </div>
+    </a>
   </div>
   {% endfor %}
         </div>
@@ -86,30 +76,19 @@
 
   <div class="bg-white p-8">
    <div class="grid grid-cols-4 gap-4">
-{% for next_three_img in next_three %} 
+{% for next_three_img, next_three_link, next_three_des, next_three_name in III %}
     <!-- Product 1 -->
+    <a href="{{ next_three_link }}">
     <div class="border p-2">
-        <img src="../static/featured_image/image{{ next_three_img }}.jpg" alt="" class="img-1">
-     
-     <div class="text-red-600 text-sm mb-1">
-      システイン
-     </div>
-     <div class="text-lg font-bold mb-1">
-      L-Cysteine 500mg 100 Tablets
-     </div>
-     <div class="text-sm mb-1">
-      NOW Foods
-     </div>
-     <div class="text-xs mb-1">
-      L-Cysteine 栄養補助 錠剤 アミノ酸
-     </div>
-     <div class="text-xs mb-1">
-      約30〜100日分 輸入 セット
+        <img src="../static/featured_image/image{{ next_three_img }}.jpg" alt="" class="img-1 img-2-4">
+     <div class="font-bold">
+      {{ next_three_des }}
      </div>
      <div class="text-red-600 font-bold text-lg">
-      ¥1,533
+      {{ next_three_name}}
      </div>
     </div>
+    </a>
 {% endfor %}
    </div>
   </div>
@@ -117,27 +96,19 @@
 
   <div class="bg-white p-8">
    <div class="grid grid-cols-5 gap-4">
-{% for rest_img in rest %} 
+{% for rest_img, rest_link, rest_des, rest_name in IIII %}
     <!-- Product 5 -->
+    <a href="{{ rest_link }}">
     <div class="border p-2">
-      <img src="../static/featured_image/image{{ rest_img }}.jpg" alt="" class="img-1">
-     
-     <div class="text-red-600 text-sm mb-1">
-      ヘアケア
-     </div>
-     <div class="text-lg font-bold mb-1">
-      Smooth Hair Lotion 340g
-     </div>
-     <div class="text-sm mb-1">
-      Keratin
-     </div>
-     <div class="text-xs mb-1">
-      ヘアローション スムース ヘアケア 340g
+      <img src="../static/featured_image/image{{ rest_img }}.jpg" alt="" class="img-1 img-8">
+     <div class="font-bold">
+      {{ rest_des }}
      </div>
      <div class="text-red-600 font-bold text-lg">
-      ¥1,794
+      {{ rest_name }}
      </div>
     </div>
+    </a>
 {% endfor %}
    </div>
   </div>
@@ -150,61 +121,61 @@
   <body class="bg-gray-100">
     <div class="max-w-screen-xl mx-auto px-4 py-8">
      <h1 class="text-2xl font-bold mb-6">
-      "NEXT" DAY - CyberAgent Developer Conference 2023
+      Webコースを受けている方にオススメの動画
      </h1>
      <div class="grid grid-cols-4 gap-4 mb-8">
       <div class="bg-white p-4 shadow">
-       <img alt="Opening Keynote CADC2023 featuring three speakers" class="mb-2" height="168" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-EkLb42job5k8Pfc3MdMUmp74.png?st=2024-05-03T10%3A19%3A54Z&amp;se=2024-05-03T12%3A19%3A54Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-05-02T23%3A40%3A25Z&amp;ske=2024-05-03T23%3A40%3A25Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=EsqLb1c3/2ZPNGoCNg8bz4q1KMJhrVSAmpmzx27Z3go%3D" width="300"/>
+       <iframe class="mb-2" width="241" height="168" src="https://www.youtube.com/embed/CfdRXSrwLDo?si=o6hv7LOno0vSeLe_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
        <h2 class="text-lg font-semibold">
-        Opening Keynote [CADC2023]
+        【Ruby on Rails入門】初心者OK！掲示板アプリを作りながら学ぶRuby on Rails入門
        </h2>
       </div>
       <div class="bg-white p-4 shadow">
-       <img alt="Panel discussion with four participants" class="mb-2" height="168" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-ruCkItGmVaADTsw6gXuTD3dy.png?st=2024-05-03T10%3A19%3A53Z&amp;se=2024-05-03T12%3A19%3A53Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-05-02T23%3A28%3A49Z&amp;ske=2024-05-03T23%3A28%3A49Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=rl/n76BXPPil0j6KJ73jV/O9HGdki5WsNXwYLBAEnfw%3D" width="300"/>
+        <iframe class="mb-2" width="241" height="168" src="https://www.youtube.com/embed/AKrW0Oog4xo?si=cEcGO1AUxt3CqfaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
        <h2 class="text-lg font-semibold">
-        パネルディスカッション: バーチャル！6周年に向けた...
+        【Ruby on Rails入門 #1】つまづきやすいRuby on Railsのインストール手順を解説します【ポテパンキャンプの初心者向けプログラミング学習講座】
        </h2>
       </div>
       <div class="bg-white p-4 shadow">
-       <img alt="Two speakers discussing CADVUI and its impact" class="mb-2" height="168" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-gfu9qnA5sUZknCLuWxHXjnXl.png?st=2024-05-03T10%3A19%3A49Z&amp;se=2024-05-03T12%3A19%3A49Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-05-02T23%3A52%3A51Z&amp;ske=2024-05-03T23%3A52%3A51Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=JggnCMyy9XbC8gXammtG8iS8cLV74B4eh2ILu6b290Y%3D" width="300"/>
+        <iframe class="mb-2" width="241" height="168" src="https://www.youtube.com/embed/NNdEgCN1ZWo?si=xHfNOveRDydk75ll" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
        <h2 class="text-lg font-semibold">
-        グラレコで解説！CADVUI：エイジングケアレシピを...
+        【最短最速】これ1本でHTML・CSS基礎を習得【永久保存版】
        </h2>
       </div>
       <div class="bg-white p-4 shadow">
-       <img alt="Speaker discussing strategies for Ameba platform" class="mb-2" height="168" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-bml6vjZlB9eB5iYmLJKFENxT.png?st=2024-05-03T10%3A19%3A53Z&amp;se=2024-05-03T12%3A19%3A53Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-05-02T23%3A39%3A00Z&amp;ske=2024-05-03T23%3A39%3A00Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=%2Bm2k3/myvkRp3XtyItEXT743rtrNxxwE0/lBrNunqDM%3D" width="300"/>
+        <iframe class="mb-2" width="241" height="168" src="https://www.youtube.com/embed/Hbxulm8iXSA?si=Sb2ElrlINnLT_u5m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
        <h2 class="text-lg font-semibold">
-        基調講演10過去: 新卒2年目がシリーズした「原宿リベン...
+        【HTML/CSS】実践！Webサイト作成から公開までの過程を解説！
        </h2>
       </div>
      </div>
      <!-- 2段目start -->
      <h1 class="text-2xl font-bold mb-6">
-      "NEXT" DAY - CyberAgent Developer Conference 2023
+      Pythonコースを受けている方にオススメの動画
      </h1>
      <div class="grid grid-cols-4 gap-4 mb-8">
       <div class="bg-white p-4 shadow">
-       <img alt="Opening Keynote CADC2023 featuring three speakers" class="mb-2" height="168" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-EkLb42job5k8Pfc3MdMUmp74.png?st=2024-05-03T10%3A19%3A54Z&amp;se=2024-05-03T12%3A19%3A54Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-05-02T23%3A40%3A25Z&amp;ske=2024-05-03T23%3A40%3A25Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=EsqLb1c3/2ZPNGoCNg8bz4q1KMJhrVSAmpmzx27Z3go%3D" width="300"/>
+        <iframe class="mb-2" width="241" height="168" src="https://www.youtube.com/embed/VRFfAeW30qE?si=Rd69yDAkf0OgT8Sr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
        <h2 class="text-lg font-semibold">
-        Opening Keynote [CADC2023]
+        【Webスクレイピング超入門】2時間で基礎を完全マスター！PythonによるWebスクレイピング入門 連結版
        </h2>
       </div>
       <div class="bg-white p-4 shadow">
-       <img alt="Panel discussion with four participants" class="mb-2" height="168" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-ruCkItGmVaADTsw6gXuTD3dy.png?st=2024-05-03T10%3A19%3A53Z&amp;se=2024-05-03T12%3A19%3A53Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-05-02T23%3A28%3A49Z&amp;ske=2024-05-03T23%3A28%3A49Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=rl/n76BXPPil0j6KJ73jV/O9HGdki5WsNXwYLBAEnfw%3D" width="300"/>
+        <iframe class="mb-2" width="241" height="168" src="https://www.youtube.com/embed/okpRV08-svw?si=EFXPKwOeM316mWqX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
        <h2 class="text-lg font-semibold">
-        パネルディスカッション: バーチャル！6周年に向けた...
+        【完全版】この動画1本で機械学習実装（Python）の基礎を習得！忙しい人のための速習コース
        </h2>
       </div>
       <div class="bg-white p-4 shadow">
-       <img alt="Two speakers discussing CADVUI and its impact" class="mb-2" height="168" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-gfu9qnA5sUZknCLuWxHXjnXl.png?st=2024-05-03T10%3A19%3A49Z&amp;se=2024-05-03T12%3A19%3A49Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-05-02T23%3A52%3A51Z&amp;ske=2024-05-03T23%3A52%3A51Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=JggnCMyy9XbC8gXammtG8iS8cLV74B4eh2ILu6b290Y%3D" width="300"/>
+        <iframe class="mb-2" width="241" height="168" src="https://www.youtube.com/embed/kBKn5IkH06A?si=fcqtdbAZ_eqdU17i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
        <h2 class="text-lg font-semibold">
-        グラレコで解説！CADVUI：エイジングケアレシピを...
+        【Python超入門講座】この動画1本でゼロから基礎をマスター！【初心者向け】
        </h2>
       </div>
       <div class="bg-white p-4 shadow">
-       <img alt="Speaker discussing strategies for Ameba platform" class="mb-2" height="168" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-bml6vjZlB9eB5iYmLJKFENxT.png?st=2024-05-03T10%3A19%3A53Z&amp;se=2024-05-03T12%3A19%3A53Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-05-02T23%3A39%3A00Z&amp;ske=2024-05-03T23%3A39%3A00Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=%2Bm2k3/myvkRp3XtyItEXT743rtrNxxwE0/lBrNunqDM%3D" width="300"/>
+        <iframe class="mb-2" width="241" height="168" src="https://www.youtube.com/embed/9caZqGPIY8A?si=_foqeKSVgBUJvjU-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
        <h2 class="text-lg font-semibold">
-        基調講演10過去: 新卒2年目がシリーズした「原宿リベン...
+        【完全解説】Pythonでできること10選+具体例50個
        </h2>
       </div>
      </div>
@@ -562,6 +533,12 @@ SP
 }
 .mb-8 {
   margin-top: 32px;
+}
+.img-2-4 {
+  height: 240px;
+}
+.img-8 {
+  height: 180px;
 }
   </style>
  </body>

@@ -267,23 +267,21 @@ def predict():
     if request.method == "GET":
         return render_template("predict.html")
     elif request.method == "POST":
-        quote1 = request.form["name1"]
         quote2 = request.form["name2"]
         quote3 = request.form["name3"]
         quote4 = request.form["name4"]
         quote5 = request.form["name5"]
         quote6 = request.form["name6"]
-        quote7 = request.form["name7"]
         # result = predict_sentiment(quote)
         data = {
             'id': [100],
-            'function': [quote1],
+            'function': 'a',
             'design_role_model': [quote2],
             'design_html': [quote3],
             'design_css_position': [quote4],
             'design_css_color': [quote5],
             'error': [quote6],
-            'release': [quote7],
+            'release': 'a',
             'image_url': 'a',
             'link_url': 'a',
             'name': 'a',
@@ -299,7 +297,7 @@ def predict():
         
         cos_list = []
         for user_id in df1.index:
-            cos_list.append(cosine_similarity([df2.loc[100, ["function", "design_role_model", "design_html", "design_css_position", "design_css_color", "error"]]], [df1.loc[user_id, ["function", "design_role_model", "design_html", "design_css_position", "design_css_color", "error"]]]))
+            cos_list.append(cosine_similarity([df2.loc[100, ["design_role_model", "design_html", "design_css_position", "design_css_color", "error"]]], [df1.loc[user_id, ["design_role_model", "design_html", "design_css_position", "design_css_color", "error"]]]))
         df3 = pd.DataFrame([cos_list])
         df4 = df3.T
         df4.index = df4.index + 1
@@ -316,19 +314,44 @@ def predict():
         df_sorted = result.sort_values(0, ascending=False)
 
         age_list = df_sorted['Index_Column'].tolist()
+        age_list2 = df_sorted['link_url'].tolist()
+        age_list3 = df_sorted['explanatory_text'].tolist()
+        age_list4 = df_sorted['name'].tolist()
         
         first_one = age_list[:1]
         next_two = age_list[1:3]
         next_three = age_list[3:7]
         rest = age_list[7:]
         
+        first_one2 = age_list2[:1]
+        next_two2 = age_list2[1:3]
+        next_three2 = age_list2[3:7]
+        rest2 = age_list2[7:]
+        
+        first_one3 = age_list3[:1]
+        next_two3 = age_list3[1:3]
+        next_three3 = age_list3[3:7]
+        rest3 = age_list3[7:]
+        
+        first_one4 = age_list4[:1]
+        next_two4 = age_list4[1:3]
+        next_three4 = age_list4[3:7]
+        rest4 = age_list4[7:]
         
         return render_template(
             "predict.html",
             df_sorted = df_sorted,
             age_list = age_list,
-            first_one = first_one,
-            next_two = next_two,
-            next_three = next_three,
-            rest = rest,
+            I = zip(first_one, first_one2, first_one3, first_one4),
+            II = zip(next_two, next_two2, next_two3, next_two4),
+            III = zip(next_three, next_three2, next_three3, next_three4),
+            IIII = zip(rest, rest2, rest3, rest4),
+            # first_one = first_one,
+            # next_two = next_two,
+            # next_three = next_three,
+            # rest = rest,
+            # first_one2 = first_one2,
+            # next_two2 = next_two2,
+            # next_three2 = next_three2,
+            # rest2 = rest2,
         )
