@@ -17,3 +17,5 @@ markupSafe==2.1.1
 click==8.0.4
 requests==2.27.1
 pandas==2.2.1
+scikit-learn==1.3.0
+numpy==1.26.4
