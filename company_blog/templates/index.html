@@ -62,7 +62,7 @@
                                 <div class="card-body" style="max-height: 26rem;">
                                     {% if post.featured_image1 %}
                                     <div class="mb-3" style="text-align: center;"> 
-                                        <img src="{{ url_for('static', filename='featured_image/' + post.featured_image1) }}" class="img-fluid card-img-top" style="max-height: 10rem;">
+                                        <img src="{{ post.featured_image1 }}" class="img-fluid card-img-top" style="max-height: 10rem;">
                                     </div>
                                     {% endif %}
                                     <h3>
@@ -100,7 +100,7 @@
                             <li>
                                 <a href="{{ url_for('main.blog_post', blog_post_id=recent_post.id) }}" class="text-decoration-none">
                                     {% if recent_post.featured_image1 %}
-                                    <img src="{{ url_for('static', filename='featured_image/' + recent_post.featured_image1) }}" class="img-fluid" width="90" height="50">
+                                    <img src="{{ recent_post.featured_image1 }}" class="img-fluid" width="90" height="50">
                                     {% endif %}
                                     <span class="ms-2">{{ recent_post.title }}</span>
                                 </a>

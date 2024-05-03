@@ -50,70 +50,70 @@
                         {% if post.featured_image1 %}
                         <div class="mb-3" style="text-align: center;">
                             <a href="{{ url_for('static', filename='featured_image/' + post.featured_image1) }}" data-lightbox="group">
-                                <img src="{{ url_for('static', filename='featured_image/' + post.featured_image1) }}" class="img-fluid">
+                                <img src="{{ post.featured_image1 }}" class="img-fluid">
                             </a>        
                         </div>
                         {% endif %}
                         {% if post.featured_image2 %}
                         <div class="mb-3" style="text-align: center;">
                             <a href="{{ url_for('static', filename='featured_image/' + post.featured_image2) }}" data-lightbox="group">
-                                <img src="{{ url_for('static', filename='featured_image/' + post.featured_image2) }}" class="img-fluid">
+                                <img src="{{ post.featured_image2 }}" class="img-fluid">
                             </a>
                         </div>
                         {% endif %}
                         {% if post.featured_image3 %}
                         <div class="mb-3" style="text-align: center;">
                             <a href="{{ url_for('static', filename='featured_image/' + post.featured_image3) }}" data-lightbox="group">
-                                <img src="{{ url_for('static', filename='featured_image/' + post.featured_image3) }}" class="img-fluid">
+                                <img src="{{ post.featured_image3 }}" class="img-fluid">
                             </a>        
                         </div>
                         {% endif %}
                         {% if post.featured_image4 %}
                         <div class="mb-3" style="text-align: center;">
                             <a href="{{ url_for('static', filename='featured_image/' + post.featured_image4) }}" data-lightbox="group">
-                                <img src="{{ url_for('static', filename='featured_image/' + post.featured_image4) }}" class="img-fluid">
+                                <img src="{{ post.featured_image4 }}" class="img-fluid">
                             </a>        
                         </div>
                         {% endif %}
                         {% if post.featured_image5 %}
                         <div class="mb-3" style="text-align: center;">
                             <a href="{{ url_for('static', filename='featured_image/' + post.featured_image5) }}" data-lightbox="group">
-                                <img src="{{ url_for('static', filename='featured_image/' + post.featured_image5) }}" class="img-fluid">
+                                <img src="{{ post.featured_image5 }}" class="img-fluid">
                             </a>        
                         </div>
                         {% endif %}
                         {% if post.featured_image6 %}
                         <div class="mb-3" style="text-align: center;">
                             <a href="{{ url_for('static', filename='featured_image/' + post.featured_image6) }}" data-lightbox="group">
-                                <img src="{{ url_for('static', filename='featured_image/' + post.featured_image6) }}" class="img-fluid">
+                                <img src="{{ post.featured_image6 }}" class="img-fluid">
                             </a>        
                         </div>
                         {% endif %}
                         {% if post.featured_image7 %}
                         <div class="mb-3" style="text-align: center;">
                             <a href="{{ url_for('static', filename='featured_image/' + post.featured_image7) }}" data-lightbox="group">
-                                <img src="{{ url_for('static', filename='featured_image/' + post.featured_image7) }}" class="img-fluid">
+                                <img src="{{ post.featured_image7 }}" class="img-fluid">
                             </a>        
                         </div>
                         {% endif %}
                         {% if post.featured_image8 %}
                         <div class="mb-3" style="text-align: center;">
                             <a href="{{ url_for('static', filename='featured_image/' + post.featured_image8) }}" data-lightbox="group">
-                                <img src="{{ url_for('static', filename='featured_image/' + post.featured_image8) }}" class="img-fluid">
+                                <img src="{{ post.featured_image8 }}" class="img-fluid">
                             </a>        
                         </div>
                         {% endif %}
                         {% if post.featured_image9 %}
                         <div class="mb-3" style="text-align: center;">
                             <a href="{{ url_for('static', filename='featured_image/' + post.featured_image9) }}" data-lightbox="group">
-                                <img src="{{ url_for('static', filename='featured_image/' + post.featured_image9) }}" class="img-fluid">
+                                <img src="{{ post.featured_image9 }}" class="img-fluid">
                             </a>        
                         </div>
                         {% endif %}
                         {% if post.featured_image10 %}
                         <div class="mb-3" style="text-align: center;">
                             <a href="{{ url_for('static', filename='featured_image/' + post.featured_image10) }}" data-lightbox="group">
-                                <img src="{{ url_for('static', filename='featured_image/' + post.featured_image10) }}" class="img-fluid">
+                                <img src="{{ post.featured_image10 }}" class="img-fluid">
                             </a>        
                         </div>
                         {% endif %}
@@ -165,7 +165,7 @@
                             <li>
                                 <a href="{{ url_for('main.blog_post', blog_post_id=recent_post.id) }}" class="text-decoration-none">
                                     {% if recent_post.featured_image1 %}
-                                    <img src="{{ url_for('static', filename='featured_image/' + recent_post.featured_image1) }}" class="img-fluid" width="90" height="50">
+                                    <img src="{{ recent_post.featured_image1 }}" class="img-fluid" width="90" height="50">
                                     {% endif %}
                                     <span class="ms-2">{{ recent_post.title }}</span>
                                 </a>

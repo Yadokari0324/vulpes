@@ -63,47 +63,47 @@ def delete_category(blog_category_id):
 def create_post():
     form = BlogPostForm()
     if form.validate_on_submit():
-        if form.picture1.data:
-            pic1 = add_featured_image(form.picture1.data)
-        else:
-            pic1 = ''
-        if form.picture2.data:
-            pic2 = add_featured_image(form.picture2.data)
-        else:
-            pic2 = ''
-        if form.picture3.data:
-            pic3 = add_featured_image(form.picture3.data)
-        else:
-            pic3 = ''
-        if form.picture4.data:
-            pic4 = add_featured_image(form.picture4.data)
-        else:
-            pic4 = ''
-        if form.picture5.data:
-            pic5 = add_featured_image(form.picture5.data)
-        else:
-            pic5 = ''
-        if form.picture6.data:
-            pic6 = add_featured_image(form.picture6.data)
-        else:
-            pic6 = ''
-        if form.picture7.data:
-            pic7 = add_featured_image(form.picture7.data)
-        else:
-            pic7 = ''
-        if form.picture8.data:
-            pic8 = add_featured_image(form.picture8.data)
-        else:
-            pic8 = ''
-        if form.picture9.data:
-            pic9 = add_featured_image(form.picture9.data)
-        else:
-            pic9 = ''
-        if form.picture10.data:
-            pic10 = add_featured_image(form.picture10.data)
-        else:
-            pic10 = ''
-        blog_post = BlogPost(title=form.title.data, text=form.text.data, featured_image1=pic1, featured_image2=pic2, featured_image3=pic3, featured_image4=pic4, featured_image5=pic5, featured_image6=pic6, featured_image7=pic7, featured_image8=pic8, featured_image9=pic9, featured_image10=pic10, user_id=current_user.id, category_id=form.category.data, summary=form.summary.data)
+        # if form.picture1.data:
+        #     pic1 = add_featured_image(form.picture1.data)
+        # else:
+        #     pic1 = ''
+        # if form.picture2.data:
+        #     pic2 = add_featured_image(form.picture2.data)
+        # else:
+        #     pic2 = ''
+        # if form.picture3.data:
+        #     pic3 = add_featured_image(form.picture3.data)
+        # else:
+        #     pic3 = ''
+        # if form.picture4.data:
+        #     pic4 = add_featured_image(form.picture4.data)
+        # else:
+        #     pic4 = ''
+        # if form.picture5.data:
+        #     pic5 = add_featured_image(form.picture5.data)
+        # else:
+        #     pic5 = ''
+        # if form.picture6.data:
+        #     pic6 = add_featured_image(form.picture6.data)
+        # else:
+        #     pic6 = ''
+        # if form.picture7.data:
+        #     pic7 = add_featured_image(form.picture7.data)
+        # else:
+        #     pic7 = ''
+        # if form.picture8.data:
+        #     pic8 = add_featured_image(form.picture8.data)
+        # else:
+        #     pic8 = ''
+        # if form.picture9.data:
+        #     pic9 = add_featured_image(form.picture9.data)
+        # else:
+        #     pic9 = ''
+        # if form.picture10.data:
+        #     pic10 = add_featured_image(form.picture10.data)
+        # else:
+        #     pic10 = ''
+        blog_post = BlogPost(title=form.title.data, text=form.text.data, featured_image1=form.picture1.data, featured_image2=form.picture2.data, featured_image3=form.picture3.data, featured_image4=form.picture4.data, featured_image5=form.picture5.data, featured_image6=form.picture6.data, featured_image7=form.picture7.data, featured_image8=form.picture8.data, featured_image9=form.picture9.data, featured_image10=form.picture10.data, user_id=current_user.id, category_id=form.category.data, summary=form.summary.data)
         db.session.add(blog_post)
         db.session.commit()
         flash('ブログ投稿が作成されました')
@@ -148,26 +148,36 @@ def update_post(blog_post_id):
     form = BlogPostForm()
     if form.validate_on_submit():
         blog_post.title = form.title.data
-        if form.picture1.data:
-            blog_post.featured_image1 = add_featured_image(form.picture1.data)
-        if form.picture2.data:
-            blog_post.featured_image2 = add_featured_image(form.picture2.data)
-        if form.picture3.data:
-            blog_post.featured_image3 = add_featured_image(form.picture3.data)
-        if form.picture4.data:
-            blog_post.featured_image4 = add_featured_image(form.picture4.data)
-        if form.picture5.data:
-            blog_post.featured_image5 = add_featured_image(form.picture5.data)
-        if form.picture6.data:
-            blog_post.featured_image6 = add_featured_image(form.picture6.data)
-        if form.picture7.data:
-            blog_post.featured_image7 = add_featured_image(form.picture7.data)
-        if form.picture8.data:
-            blog_post.featured_image8 = add_featured_image(form.picture8.data)
-        if form.picture9.data:
-            blog_post.featured_image9 = add_featured_image(form.picture9.data)
-        if form.picture10.data:
-            blog_post.featured_image10 = add_featured_image(form.picture10.data)
+        # if form.picture1.data:
+        #     blog_post.featured_image1 = add_featured_image(form.picture1.data)
+        # if form.picture2.data:
+        #     blog_post.featured_image2 = add_featured_image(form.picture2.data)
+        # if form.picture3.data:
+        #     blog_post.featured_image3 = add_featured_image(form.picture3.data)
+        # if form.picture4.data:
+        #     blog_post.featured_image4 = add_featured_image(form.picture4.data)
+        # if form.picture5.data:
+        #     blog_post.featured_image5 = add_featured_image(form.picture5.data)
+        # if form.picture6.data:
+        #     blog_post.featured_image6 = add_featured_image(form.picture6.data)
+        # if form.picture7.data:
+        #     blog_post.featured_image7 = add_featured_image(form.picture7.data)
+        # if form.picture8.data:
+        #     blog_post.featured_image8 = add_featured_image(form.picture8.data)
+        # if form.picture9.data:
+        #     blog_post.featured_image9 = add_featured_image(form.picture9.data)
+        # if form.picture10.data:
+        #     blog_post.featured_image10 = add_featured_image(form.picture10.data)
+        blog_post.featured_image1 = form.picture1.data
+        blog_post.featured_image2 = form.picture2.data
+        blog_post.featured_image3 = form.picture3.data
+        blog_post.featured_image4 = form.picture4.data
+        blog_post.featured_image5 = form.picture5.data
+        blog_post.featured_image6 = form.picture6.data
+        blog_post.featured_image7 = form.picture7.data
+        blog_post.featured_image8 = form.picture8.data
+        blog_post.featured_image9 = form.picture9.data
+        blog_post.featured_image10 = form.picture10.data
         blog_post.text = form.text.data
         blog_post.summary = form.summary.data
         blog_post.category_id = form.category.data
