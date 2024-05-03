@@ -1,13 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 <main>
-    </div>
-    <img src="../static/featured_image/image1.jpg" alt="">
     <p>{{ df_sorted|safe }}</p>
-    {% for age in age_list %}
-        <img src="../static/featured_image/image{{ age }}.png" alt="">
+    <p>{{ age_list }}</p>
+    {% for age in df_first_one %}  
+      <p>{{ age }}</p>
     {% endfor %}
-
+        
     <!-- start -->
     <html>
  <head>
@@ -31,86 +30,66 @@
         </div>
       </section>            
 
-
-
-
+{% for first_one_img in first_one %} 
     <div class="bg-white p-5">
-        <div class="flex justify-between space-x-4">
-         <!-- Product 1 -->
-         <div class="w-1/2 border p-2">
-            <img src="../static/featured_image/image1.jpg" alt="" class="img-1">
-          <div class="flex justify-between items-center mb-2">
-          
-          
-          </div>
-          <div class="text-center mt-2">
-           <div class="text-red-500 mb-1">
-            第1位
-           </div>
-           <div class="font-bold">
-            ナウフーズ L-システイン サプリメント 500mg 100粒 NOW Foods
-           </div>
-           <div class="text-sm">
-            L-Cysteine 栄養補助 錠剤 アミノ酸 約30〜100日分 輸入 セット
-           </div>
-           <div class="text-red-600 font-bold text-lg mt-2">
-            ¥1,533
-           </div>
-           <div class="text-xs mt-1">
-            迅速発送のある「美」を目指す方に！
-           </div>
-          </div>
-         </div>
-         <!-- Product 2 -->
-         <div class="w-1/4 border p-2">
-            <img src="../static/featured_image/image2.jpg" alt="" class="img-2">
-          <div class="flex justify-between items-center mb-2">
-           
-           
-          </div>
-          
-          <div class="text-center mt-2">
-           <div class="text-red-500 mb-1">
-            第2位
-           </div>
-           <div class="font-bold">
-            ナウフーズ 鉄 サプリメント 36mg 90粒 NOW Foods Iron バランス良い アイアン エンジンパワー増進 90日分 Double Strength 輸入 セット
-           </div>
-           <div class="text-red-600 font-bold text-lg mt-2">
-            ¥1,447
-           </div>
-          </div>
-         </div>
-         <!-- Product 3 -->
-         <div class="w-1/4 border p-2">
-            <img src="../static/featured_image/image3.jpg" alt="" class="img-3">
-          <div class="flex justify-between items-center mb-2">
-           
-           
-          </div>
-          
-          <div class="text-center mt-2">
-           <div class="text-red-500 mb-1">
-            第3位
-           </div>
-           <div class="font-bold">
-            ナウフーズ ビオチン サプリメント 5000mcg 120粒 NOW Foods Biotin バランス良い ビタミンH 120日分 輸入 セット
-           </div>
-           <div class="text-red-600 font-bold text-lg mt-2">
-            ¥1,310
-           </div>
-          </div>
-         </div>
+      <div class="flex justify-between space-x-4">
+        <!-- Product 1 -->
+        <div class="w-1/2 border p-2">
+          <img src="../static/featured_image/image{{ first_one_img }}.jpg" alt="" class="img-1">
+            <div class="flex justify-between items-center mb-2">
+            </div>
+            <div class="text-center mt-2">
+              <div class="text-red-500 mb-1">
+                第1位
+              </div>
+              <div class="font-bold">
+                ナウフーズ L-システイン サプリメント 500mg 100粒 NOW Foods
+              </div>
+              <div class="text-sm">
+                L-Cysteine 栄養補助 錠剤 アミノ酸 約30〜100日分 輸入 セット
+              </div>
+              <div class="text-red-600 font-bold text-lg mt-2">
+                ¥1,533
+              </div>
+              <div class="text-xs mt-1">
+                  迅速発送のある「美」を目指す方に！
+              </div>
+            </div>
+        </div>
+{% endfor%}   
+
+{% for next_two_img in next_two %} 
+<!-- Product 2 -->
+  <div class="w-1/4 border p-2">
+    <img src="../static/featured_image/image{{ next_two_img }}.jpg" alt="" class="img-2">
+      <div class="flex justify-between items-center mb-2">
+      </div>
+      <div class="text-center mt-2">
+        <div class="text-red-500 mb-1">
+          第2位
+        </div>
+        <div class="font-bold">
+          ナウフーズ 鉄 サプリメント 36mg 90粒 NOW Foods Iron バランス良い アイアン エンジンパワー増進 90日分 Double Strength 輸入 セット
+        </div>
+        <div class="text-red-600 font-bold text-lg mt-2">
+          ¥1,447
+        </div>
+      </div>
+  </div>
+  {% endfor %}
         </div>
        </div>
+      
+
 
 
 
   <div class="bg-white p-8">
    <div class="grid grid-cols-4 gap-4">
+{% for next_three_img in next_three %} 
     <!-- Product 1 -->
     <div class="border p-2">
-        <img src="../static/featured_image/image4.jpg" alt="" class="img-1">
+        <img src="../static/featured_image/image{{ next_three_img }}.jpg" alt="" class="img-1">
      
      <div class="text-red-600 text-sm mb-1">
       システイン
@@ -131,69 +110,17 @@
       ¥1,533
      </div>
     </div>
-    <!-- Product 2 -->
-    <div class="border p-2">
-        <img src="../static/featured_image/image5.jpg" alt="" class="img-1">
-     
-     <div class="text-red-600 text-sm mb-1">
-      鉄
-     </div>
-     <div class="text-lg font-bold mb-1">
-      Iron 36mg 90 Tablets
-     </div>
-     <div class="text-sm mb-1">
-      NOW Foods
-     </div>
-     <div class="text-xs mb-1">
-      アイアン ビタミン剤 錠剤 90日分 Double Strength 輸入 セット
-     </div>
-     <div class="text-red-600 font-bold text-lg">
-      ¥1,447
-     </div>
-    </div>
-    <!-- Product 3 -->
-    <div class="border p-2">
-        <img src="../static/featured_image/image6.jpg" alt="" class="img-1">
-     
-     <div class="text-red-600 text-sm mb-1">
-      ビオチン
-     </div>
-     <div class="text-lg font-bold mb-1">
-      Biotin 5000mcg 120 Tablets
-     </div>
-     <div class="text-sm mb-1">
-      NOW Foods
-     </div>
-     <div class="text-xs mb-1">
-      ビオチン ビタミン剤 ビタミンH 120日分 輸入 セット
-     </div>
-     <div class="text-red-600 font-bold text-lg">
-      ¥1,310
-     </div>
-    </div>
-    <!-- Product 4 -->
-    <div class="border p-2">
-      <img src="../static/featured_image/image7.jpg" alt="" class="img-1">
-    
-     <div class="text-red-600 text-sm mb-1">
-      デオドラント
-     </div>
-     <div class="text-lg font-bold mb-1">
-      Underarm Deodorant Cream 12.5g
-     </div>
-     <div class="text-sm mb-1">
-      Lavilin
-     </div>
-     <div class="text-xs mb-1">
-      クリーム ひと塗り 防臭
-     </div>
-     <div class="text-red-600 font-bold text-lg">
-      ¥2,886
-     </div>
-    </div>
+{% endfor %}
+   </div>
+  </div>
+
+
+  <div class="bg-white p-8">
+   <div class="grid grid-cols-5 gap-4">
+{% for rest_img in rest %} 
     <!-- Product 5 -->
     <div class="border p-2">
-      <img src="../static/featured_image/image8.jpg" alt="" class="img-1">
+      <img src="../static/featured_image/image{{ rest_img }}.jpg" alt="" class="img-1">
      
      <div class="text-red-600 text-sm mb-1">
       ヘアケア
@@ -211,126 +138,7 @@
       ¥1,794
      </div>
     </div>
-    <!-- Product 6 -->
-    <div class="border p-2">
-      <img src="../static/featured_image/image9.jpg" alt="" class="img-1">
-     
-     <div class="text-red-600 text-sm mb-1">
-      マグネシウム
-     </div>
-     <div class="text-lg font-bold mb-1">
-      High Absorption Magnesium 240 Tablets
-     </div>
-     <div class="text-sm mb-1">
-      Doctor's Best
-     </div>
-     <div class="text-xs mb-1">
-      マグネシウム 錠剤 240日分 輸入 セット
-     </div>
-     <div class="text-red-600 font-bold text-lg">
-      ¥3,153
-     </div>
-    </div>
-    <!-- Product 7 -->
-    <div class="border p-2">
-      <img src="../static/featured_image/image10.jpg" alt="" class="img-1">
-
-     <div class="text-red-600 text-sm mb-1">
-      スキンケア
-     </div>
-     <div class="text-lg font-bold mb-1">
-      Collagen Skin Rescue Lotion 454g
-     </div>
-     <div class="text-sm mb-1">
-      Advanced Clinicals
-     </div>
-     <div class="text-xs mb-1">
-      コラーゲン スキンケア ローション 454g
-     </div>
-     <div class="text-red-600 font-bold text-lg">
-      ¥1,396
-     </div>
-    </div>
-    <!-- Product 8 -->
-    <div class="border p-2">
-      <img src="../static/featured_image/image11.jpg" alt="" class="img-1">
-    
-     <div class="text-red-600 text-sm mb-1">
-      ビタミンC
-     </div>
-     <div class="text-lg font-bold mb-1">
-      Liposomal Vitamin C 1000mg 180 Capsules
-     </div>
-     <div class="text-sm mb-1">
-      Dr. Mercola
-     </div>
-     <div class="text-xs mb-1">
-      リポソームビタミンC サプリメント 1000mg 180カプセル
-     </div>
-     <div class="text-red-600 font-bold text-lg">
-      ¥5,966
-     </div>
-    </div>
-    <!-- Product 9 -->
-    <div class="border p-2">
-      <img src="../static/featured_image/image12.jpg" alt="" class="img-1">
-    
-     <div class="text-red-600 text-sm mb-1">
-      ピクノジェノール
-     </div>
-     <div class="text-lg font-bold mb-1">
-      Pycnogenol 100mg 120 Capsules
-     </div>
-     <div class="text-sm mb-1">
-      Healthy Origins
-     </div>
-     <div class="text-xs mb-1">
-      ピクノジェノール サプリメント 100mg 120カプセル
-     </div>
-     <div class="text-red-600 font-bold text-lg">
-      ¥10,757
-     </div>
-    </div>
-    <!-- Product 10 -->
-    <div class="border p-2">
-      <img src="../static/featured_image/image13.jpg" alt="" class="img-1">
-     
-     <div class="text-red-600 text-sm mb-1">
-      ティーツリー
-     </div>
-     <div class="text-lg font-bold mb-1">
-      Antiseptic Ointment 57g
-     </div>
-     <div class="text-sm mb-1">
-      Tea Tree Therapy
-     </div>
-     <div class="text-xs mb-1">
-      アンチセプティック オイントメント 57g
-     </div>
-     <div class="text-red-600 font-bold text-lg">
-      ¥1,918
-     </div>
-    </div>
-    <!-- Product 11 -->
-    <div class="border p-2">
-      <img src="../static/featured_image/image14.jpg" alt="" class="img-1">
-     
-     <div class="text-red-600 text-sm mb-1">
-      ティーツリー
-     </div>
-     <div class="text-lg font-bold mb-1">
-      Antiseptic Ointment 57g
-     </div>
-     <div class="text-sm mb-1">
-      Tea Tree Therapy
-     </div>
-     <div class="text-xs mb-1">
-      アンチセプティック オイントメント 57g
-     </div>
-     <div class="text-red-600 font-bold text-lg">
-      ¥1,918
-     </div>
-    </div>
+{% endfor %}
    </div>
   </div>
 

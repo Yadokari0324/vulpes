@@ -1,11 +1,45 @@
-{% extends "base2.html" %}
+{% extends "base.html" %}
 {% block content %}
+    <!-- start -->
+    <header id="header">
+        <h1 class="site-title">
+        <a href="index.html"><img src="img/logo.svg" alt="Sneakers"></a>
+        </h1>
+
+        <nav id="navi">
+        <ul class="nav-menu">
+            <li><a href="#pickup">PICK UP</a></li>
+            <li><a href="#feature">FEATURE</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+        <ul class="nav-sns">
+            <li><a href="https://twitter.com/" target="_blank">Twitter</a></li>
+            <li><a href="https://www.facebook.com/" target="_blank">facebook</a></li>
+            <li><a href="https://www.instagram.com/" target="_blank">instagram</a></li>
+        </ul>
+        </nav>
+
+        <div class="toggle_btn">
+        <span></span>
+        <span></span>
+        <span></span>
+        </div>
+
+        <div id="mask"></div>
+    </header>
+    <!-- end -->
+
+    <h1 class="content_title">〜 オリジナル開発前ゼミ 〜</h1>
     <div class="content">
+        <h1>判定する言葉を入力しよう！</h1>
         <form action="/predict" method="POST">
             <input type="number" name="name1">
             <input type="number" name="name2">
             <input type="number" name="name3">
             <input type="number" name="name4">
+            <input type="number" name="name5">
+            <input type="number" name="name6">
+            <input type="number" name="name7">
             <input type="submit" value='送信'>
         </form>
     </div>

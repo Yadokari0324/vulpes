@@ -271,25 +271,35 @@ def predict():
         quote2 = request.form["name2"]
         quote3 = request.form["name3"]
         quote4 = request.form["name4"]
+        quote5 = request.form["name5"]
+        quote6 = request.form["name6"]
+        quote7 = request.form["name7"]
         # result = predict_sentiment(quote)
         data = {
             'id': [100],
-            'error': [quote1],
-            'design': [quote2],
-            'speed': [quote3],
-            'release': [quote4],
+            'function': [quote1],
+            'design_role_model': [quote2],
+            'design_html': [quote3],
+            'design_css_position': [quote4],
+            'design_css_color': [quote5],
+            'error': [quote6],
+            'release': [quote7],
+            'image_url': 'a',
+            'link_url': 'a',
+            'name': 'a',
+            'explanatory_text': 'a',
         }
         # label = result[0]["label"]
         # score = round(result[0]["score"], 3)
         # render_templateで引数を渡す方法を確認しましょう。
         df2 = pd.DataFrame(data)
         df2 = df2.set_index('id')
-        df1 = pd.read_csv("book1.csv", index_col=0)
+        df1 = pd.read_csv("book3.csv", index_col=0)
         
         
         cos_list = []
         for user_id in df1.index:
-            cos_list.append(cosine_similarity([df2.loc[100, :]], [df1.loc[user_id, :]]))
+            cos_list.append(cosine_similarity([df2.loc[100, ["function", "design_role_model", "design_html", "design_css_position", "design_css_color", "error"]]], [df1.loc[user_id, ["function", "design_role_model", "design_html", "design_css_position", "design_css_color", "error"]]]))
         df3 = pd.DataFrame([cos_list])
         df4 = df3.T
         df4.index = df4.index + 1
@@ -307,9 +317,18 @@ def predict():
 
         age_list = df_sorted['Index_Column'].tolist()
         
+        first_one = age_list[:1]
+        next_two = age_list[1:3]
+        next_three = age_list[3:7]
+        rest = age_list[7:]
+        
         
         return render_template(
             "predict.html",
             df_sorted = df_sorted,
             age_list = age_list,
+            first_one = first_one,
+            next_two = next_two,
+            next_three = next_three,
+            rest = rest,
         )
