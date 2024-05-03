@@ -1,37 +1,31 @@
-{% extends "base.html" %}
+{% extends "base2.html" %}
 {% block content %}
     <!-- start -->
     <header id="header">
-        <h1 class="site-title">
-        <a href="index.html"><img src="img/logo.svg" alt="Sneakers"></a>
-        </h1>
-
         <nav id="navi">
-        <ul class="nav-menu">
-            <li><a href="#pickup">PICK UP</a></li>
-            <li><a href="#feature">FEATURE</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-        </ul>
-        <ul class="nav-sns">
-            <li><a href="https://twitter.com/" target="_blank">Twitter</a></li>
-            <li><a href="https://www.facebook.com/" target="_blank">facebook</a></li>
-            <li><a href="https://www.instagram.com/" target="_blank">instagram</a></li>
-        </ul>
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('main.index') }}">エラー集</a></li>
+                <li><a href="{{ url_for('main.zemi') }}">オススメツール</a></li>
+                <li><a href="{{ url_for('users.logout') }}">ログアウト</a></li>
+                {% if current_user.is_administrator() %}
+                <li><a href="{{ url_for('main.blog_maintenance') }}">ブログ</a></li>
+                <li><a href="{{ url_for('main.category_maintenance') }}">カテゴリ</a></li>
+                <li><a href="{{url_for('users.user_maintenance')}}">ユーザー</a></li>
+                {% endif %}
+            </ul>
         </nav>
-
-        <div class="toggle_btn">
-        <span></span>
-        <span></span>
-        <span></span>
-        </div>
-
-        <div id="mask"></div>
     </header>
+      
+    <div class="toggle_btn">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+    
+    <div id="mask"></div>
     <!-- end -->
 
-    <h1 class="content_title">〜 オリジナル開発前ゼミ 〜</h1>
     <div class="content">
-        <h1>判定する言葉を入力しよう！</h1>
         <form action="/predict" method="POST">
             <input type="number" name="name1">
             <input type="number" name="name2">
@@ -44,6 +38,227 @@
         </form>
     </div>
 
+    <style>
+        @font-face {
+            font-family: "Geeksalon";
+            src: url("../../font/Raleway-4.101/") format(OTF);
+        }
+        body {
+            background-color: #D9D7D7;
+            font-family: "Geeksalon";
+        }
+        .text-decoration-none {
+            color: black;
+        }
+        #navi {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -300px;
+        bottom: 0;
+        width: 300px;
+        color: #fff;
+        padding: 60px 25px;
+        background-color: #121212;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        transition: all .5s;
+        z-index: 20;
+        opacity: 0;
+        }
+        #navi a {
+        color: #fff;
+        }
+        .open #navi {
+        left: 0;
+        opacity: 1;
+        }
+        #navi ul {
+        margin: 0;
+        padding: 0;
+        }
+        #navi ul.nav-menu {
+        margin-bottom: 60px;
+        border-top: solid 1px #fff;
+        }
+        #navi ul.nav-menu li {
+        position: relative;
+        margin: 0;
+        padding: 20px 0;
+        border-bottom: solid 1px #fff;
+        }
+        #navi ul.nav-sns li {
+        padding: 5px 0;
+        }
+        .toggle_btn {
+        display: block;
+        position: fixed;
+        top: 25px;
+        right: 45px;
+        width: 30px;
+        height: 30px;
+        transition: all .5s;
+        cursor: pointer;
+        z-index: 20;
+        }
+        .toggle_btn span {
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background-color: #333;
+        border-radius: 4px;
+        transition: all .5s;
+        }
+        .toggle_btn span:nth-child(1) {
+        top: 4px;
+        }
+        .toggle_btn span:nth-child(2) {
+        top: 14px;
+        }
+        .toggle_btn span:nth-child(3) {
+        bottom: 4px;
+        }
+        .open .toggle_btn span {
+        background-color: #fff;
+        }
+        .open .toggle_btn span:nth-child(1) {
+        -webkit-transform: translateY(10px) rotate(-315deg);
+        transform: translateY(10px) rotate(-315deg);
+        }
+        .open .toggle_btn span:nth-child(2) {
+        opacity: 0;
+        }
+        .open .toggle_btn span:nth-child(3) {
+        -webkit-transform: translateY(-10px) rotate(315deg);
+        transform: translateY(-10px) rotate(315deg);
+        }
+        #mask {
+        display: none;
+        transition: all .5s;
+        }
+        .open #mask {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: .8;
+        z-index: 10;
+        cursor: pointer;
+        }
+        .card {
+            border-color: #736F6E;
+        }
+        .card-body {
+            border-color: #736F6E;
+        }
+        h1 {
+            font-size: 80px;
+            font-weight: bold;
+        }
+        h1 span{
+        color: #5379fa !important;
+        }
+        .title_error {
+            font-weight: bold;
+        }
+        .img-end {
+            object-fit: cover;
+            height: 200px;
+        }
+        </style>
+
+    <script>
+        $(function(){
+    /*=================================================
+    スマホメニュー
+    ===================================================*/
+    // ハンバーガーメニューのクリックイベント
+    // 解説は、「中級編：ストアサイト（インテリア）」参照
+    $('.toggle_btn').on('click', function() {
+        if ($('#header').hasClass('open')) {
+        $('#header').removeClass('open');
+        } else {
+        $('#header').addClass('open');
+        }
+    });
+
+    // #maskのエリアをクリックした時にメニューを閉じる
+    $('#mask').on('click', function() {
+        $('#header').removeClass('open');
+    });
+
+    // リンクをクリックした時にメニューを閉じる
+    $('#navi a').on('click', function() {
+        $('#header').removeClass('open');
+    });
+
+    /*=================================================
+    スムーススクロール
+    ===================================================*/
+    // ページ内リンクのイベント
+    $('a[href^="#"]').click(function(){
+        // リンクを取得
+        let href= $(this).attr("href");
+        // ジャンプ先のid名をセット
+        let target = $(href == "#" || href == "" ? 'html' : href);
+        // トップからジャンプ先の要素までの距離を取得
+        let position = target.offset().top;
+        // animateでスムーススクロールを行う
+        // 600はスクロール速度で単位はミリ秒
+        $("html, body").animate({scrollTop:position}, 600, "swing");
+        return false;
+    });
+
+    /*=================================================
+    PICK UP スライダー
+    ===================================================*/
+    // カルーセル用 jQueryプラグイン「slick」の設定
+    // マニュアル：https://kenwheeler.github.io/slick/
+    $('.slick-area').slick({
+        arrows: false,
+        centerMode: true,
+        centerPadding: '100px',
+        slidesToShow: 3,
+        responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+            centerPadding: '50px',
+            slidesToShow: 1
+            }
+        }
+        ]
+    });
+
+    /*=================================================
+    スクロール時の画像フェード表示
+    ===================================================*/
+    // スクロール時のイベント
+    $(window).scroll(function() {
+        // fadeinクラスに対して順に処理を行う
+        $('.fadein').each(function() {
+        // スクロールした距離
+        let scroll = $(window).scrollTop();
+        // fadeinクラスの要素までの距離
+        let target = $(this).offset().top;
+        // 画面の高さ
+        let windowHeight = $(window).height();
+        // fadeinクラスの要素が画面下にきてから200px通過した
+        // したタイミングで要素を表示
+        if (scroll > target - windowHeight + 200) {
+            $(this).css('opacity','1');
+            $(this).css('transform','translateY(0)');
+        }
+        });
+    });
+    });
+</script>
 
     
 {% endblock %}

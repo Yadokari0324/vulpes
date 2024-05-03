@@ -7,9 +7,9 @@
                     <h1>{{ post.title }}</h1>
                     <hr>
                     <div class="flex-3">
-                        <p>{{ post.blogcategory.category }}</p>
-                        <p>{{ post.date.strftime('%Y/%m/%d') }}</p>
+                        <p>カテゴリー：{{ post.blogcategory.category }}</p>
                         <p>教材の章：{{ post.summary }}</p>
+                        <p>{{ post.date.strftime('%Y/%m/%d') }}</p>
                     </div>
                 </div>
             </div>
@@ -158,7 +158,7 @@
                     </div>
                     <!--最新記事-->
                     <div class="p-4">
-                        <h4>RECENT POST <span class="ms-2 fs-6">最新投稿</span></h4>
+                        <h4>RECENT POST</h4>
                         <hr>
                         <ol class="list-unstyled">
                             {% for recent_post in recent_blog_posts %}
@@ -176,7 +176,7 @@
                     </div>
                     <!--カテゴリ一覧-->
                     <div class="p-4">
-                        <h4>CATEGORY <span class="ms-2 fs-6">カテゴリ一覧</span></h4>
+                        <h4>CATEGORY</h4>
                         <hr>
                         <ol class="list-unstyled">
                             {% for blog_category in blog_categories %}
@@ -349,6 +349,10 @@
     }
     .card-body {
         border-color: #736F6E;
+    }
+    h1 {
+        font-size: 80px;
+        font-weight: bold;
     }
     </style>
 

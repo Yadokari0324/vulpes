@@ -12,10 +12,10 @@
                         <h1>{{ user.username }}</h1>
                         <br>
                     {% elif searchtext %}
-                        <h1>"{{ searchtext }}"の検索結果</h1>
+                        <h1>{{ searchtext }}</h1>
                         <br>
                     {% else %}
-                        <h1>Vulpes</h1>
+                        <h1>Vul<span>Pes</span></h1>
                     {% endif %}
                 </div>
             </div>
@@ -62,12 +62,12 @@
                                 <div class="card-body" style="max-height: 26rem;">
                                     {% if post.featured_image1 %}
                                     <div class="mb-3" style="text-align: center;"> 
-                                        <img src="{{ post.featured_image1 }}" class="img-fluid card-img-top" style="max-height: 10rem;">
+                                        <img src="{{ post.featured_image1 }}" class="img-fluid card-img-top img-end">
                                     </div>
                                     {% endif %}
                                     <h3>
                                         <a href="{{ url_for('main.blog_post', blog_post_id=post.id) }}" class="card-title text-decoration-none">
-                                            <span>{{ post.title }}</span>
+                                            <span class="title_error">{{ post.title }}</span>
                                         </a>
                                     </h3>
                                     <p>{{ post.date.strftime('%Y-%m-%d') }}</p>
@@ -162,9 +162,6 @@
     body {
         background-color: #D9D7D7;
         font-family: "Geeksalon";
-    }
-    h1 {
-        font-size: 48px;
     }
     .text-decoration-none {
         color: black;
@@ -275,6 +272,20 @@
     }
     .card-body {
         border-color: #736F6E;
+    }
+    h1 {
+        font-size: 80px;
+        font-weight: bold;
+    }
+    h1 span{
+    color: #5379fa !important;
+    }
+    .title_error {
+        font-weight: bold;
+    }
+    .img-end {
+        object-fit: cover;
+        height: 200px;
     }
     </style>
 

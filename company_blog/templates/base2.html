@@ -17,7 +17,7 @@
 <body>
       {% from "_formhelpers.html" import render_field %}
 
-      <div class="container" style="padding-top: 4rem; padding-bottom: 4rem;">
+      <div class="container" style="padding-top: 1rem; padding-bottom: 4rem;">
         {% for message in get_flashed_messages() %}
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
           {{ message }}

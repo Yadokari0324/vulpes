@@ -1,12 +1,6 @@
-{% extends "base.html" %}
+{% extends "base2.html" %}
 {% block content %}
-<main>
-    <p>{{ df_sorted|safe }}</p>
-    <p>{{ age_list }}</p>
-    {% for age in df_first_one %}  
-      <p>{{ age }}</p>
-    {% endfor %}
-        
+<main>      
     <!-- start -->
     <html>
  <head>
@@ -22,18 +16,22 @@
         }
   </style>
  </head>
+
+
  <body>
 
     <section id="menu">
         <div class="menu-img fixed-bg">
-          <h2 class="sec-title">MENU</h2>
+          <h2 class="sec-title">RECOMMEND</h2>
         </div>
       </section>            
 
-{% for first_one_img in first_one %} 
+{% for first_one_img in first_one %}
+  <link rel="stylesheet" href="">
     <div class="bg-white p-5">
       <div class="flex justify-between space-x-4">
         <!-- Product 1 -->
+        <a href="https://openai.com/chatgpt">
         <div class="w-1/2 border p-2">
           <img src="../static/featured_image/image{{ first_one_img }}.jpg" alt="" class="img-1">
             <div class="flex justify-between items-center mb-2">
@@ -55,7 +53,9 @@
                   迅速発送のある「美」を目指す方に！
               </div>
             </div>
+          </a>
         </div>
+ 
 {% endfor%}   
 
 {% for next_two_img in next_two %} 
@@ -142,94 +142,74 @@
    </div>
   </div>
 
-  <!-- start -->
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
- </head>
- <body class="bg-gray-200">
-  <div class="container mx-auto px-4 py-8">
    <h1 class="text-center text-3xl font-semibold mb-8">
-    Jeffrey Martin
+    YOUTUBE
    </h1>
-   <div class="grid grid-cols-5 gap-4">
-    <!-- First Row -->
-    <div class="space-y-2">
-    <img src="../static/featured_image/image1.jpg" alt="" height="400">
-     <p class="text-center">
-      Red Station Wagon | From OME, TN to TENN.
-     </p>
-     <p class="text-center text-sm">
-      2023
-     </p>
-     <p class="text-center text-sm italic">
-      Live Performance
-     </p>
-    </div>
-    <div class="space-y-2">
-    <img src="../static/featured_image/image2.jpg" alt="" height="400">
-     <p class="text-center">
-      There Is a Treasure
-     </p>
-     <p class="text-center text-sm">
-      2023
-     </p>
-     <p class="text-center text-sm italic">
-      Music Video
-     </p>
-    </div>
-    <div class="space-y-2">
-    <img src="../static/featured_image/image3.jpg" alt="" height="400">
-     <p class="text-center">
-      Billy Burroughs | Live at Other Voices Dignity
-     </p>
-     <p class="text-center text-sm">
-      2022
-     </p>
-     <p class="text-center text-sm italic">
-      Live Performance
-     </p>
-    </div>
-    <!-- Second Row -->
-    <div class="space-y-2">
-     <img alt="Finding The Heart (On Tour) Short Feature" class="w-full" height="400" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-wu9VK1vzz7MxCK1EK8Rja897.png?st=2024-04-27T10%3A50%3A35Z&amp;se=2024-04-27T12%3A50%3A35Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-04-26T19%3A12%3A50Z&amp;ske=2024-04-27T19%3A12%3A50Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=TfPw5sZTKF76FIPsd7IbNr1jHctp9d2CFCzUo9czYpk%3D" width="600"/>
-     <p class="text-center">
-      Finding The Heart (On Tour)
-     </p>
-     <p class="text-center text-sm">
-      2022
-     </p>
-     <p class="text-center text-sm italic">
-      Short Feature
-     </p>
-    </div>
-    <div class="space-y-2">
-     <img alt="OurVinyl Sessions Live Performance" class="w-full" height="400" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-6xStEnu1wjHwiHzxaMLIrDhg.png?st=2024-04-27T10%3A50%3A36Z&amp;se=2024-04-27T12%3A50%3A36Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-04-26T19%3A36%3A10Z&amp;ske=2024-04-27T19%3A36%3A10Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=3tKT%2BnWtFIDGFq0nOSLVAvfqCCv29wjbtx5ynO2ND%2BA%3D" width="600"/>
-     <p class="text-center">
-      OurVinyl Sessions
-     </p>
-     <p class="text-center text-sm">
-      2022
-     </p>
-     <p class="text-center text-sm italic">
-      Live Performance
-     </p>
-    </div>
-    <div class="space-y-2">
-     <img alt="Billy Burroughs | Live at Other Voices Dignity Live Performance" class="w-full" height="400" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-nIwfiEys5zIABnQJwaxAOAL8.png?st=2024-04-27T10%3A50%3A35Z&amp;se=2024-04-27T12%3A50%3A35Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-04-26T19%3A27%3A58Z&amp;ske=2024-04-27T19%3A27%3A58Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=ciZJO6pAYc5awSQzBNfWLa3qcgob1ReE1OfjGB6ujqc%3D" width="600"/>
-     <p class="text-center">
-      Billy Burroughs | Live at Other Voices Dignity
-     </p>
-     <p class="text-center text-sm">
-      2022
-     </p>
-     <p class="text-center text-sm italic">
-      Live Performance
-     </p>
-    </div>
-   </div>
-  </div>
- </body>
+
+  <!-- start -->
+  <body class="bg-gray-100">
+    <div class="max-w-screen-xl mx-auto px-4 py-8">
+     <h1 class="text-2xl font-bold mb-6">
+      "NEXT" DAY - CyberAgent Developer Conference 2023
+     </h1>
+     <div class="grid grid-cols-4 gap-4 mb-8">
+      <div class="bg-white p-4 shadow">
+       <img alt="Opening Keynote CADC2023 featuring three speakers" class="mb-2" height="168" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-EkLb42job5k8Pfc3MdMUmp74.png?st=2024-05-03T10%3A19%3A54Z&amp;se=2024-05-03T12%3A19%3A54Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-05-02T23%3A40%3A25Z&amp;ske=2024-05-03T23%3A40%3A25Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=EsqLb1c3/2ZPNGoCNg8bz4q1KMJhrVSAmpmzx27Z3go%3D" width="300"/>
+       <h2 class="text-lg font-semibold">
+        Opening Keynote [CADC2023]
+       </h2>
+      </div>
+      <div class="bg-white p-4 shadow">
+       <img alt="Panel discussion with four participants" class="mb-2" height="168" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-ruCkItGmVaADTsw6gXuTD3dy.png?st=2024-05-03T10%3A19%3A53Z&amp;se=2024-05-03T12%3A19%3A53Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-05-02T23%3A28%3A49Z&amp;ske=2024-05-03T23%3A28%3A49Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=rl/n76BXPPil0j6KJ73jV/O9HGdki5WsNXwYLBAEnfw%3D" width="300"/>
+       <h2 class="text-lg font-semibold">
+        パネルディスカッション: バーチャル！6周年に向けた...
+       </h2>
+      </div>
+      <div class="bg-white p-4 shadow">
+       <img alt="Two speakers discussing CADVUI and its impact" class="mb-2" height="168" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-gfu9qnA5sUZknCLuWxHXjnXl.png?st=2024-05-03T10%3A19%3A49Z&amp;se=2024-05-03T12%3A19%3A49Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-05-02T23%3A52%3A51Z&amp;ske=2024-05-03T23%3A52%3A51Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=JggnCMyy9XbC8gXammtG8iS8cLV74B4eh2ILu6b290Y%3D" width="300"/>
+       <h2 class="text-lg font-semibold">
+        グラレコで解説！CADVUI：エイジングケアレシピを...
+       </h2>
+      </div>
+      <div class="bg-white p-4 shadow">
+       <img alt="Speaker discussing strategies for Ameba platform" class="mb-2" height="168" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-bml6vjZlB9eB5iYmLJKFENxT.png?st=2024-05-03T10%3A19%3A53Z&amp;se=2024-05-03T12%3A19%3A53Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-05-02T23%3A39%3A00Z&amp;ske=2024-05-03T23%3A39%3A00Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=%2Bm2k3/myvkRp3XtyItEXT743rtrNxxwE0/lBrNunqDM%3D" width="300"/>
+       <h2 class="text-lg font-semibold">
+        基調講演10過去: 新卒2年目がシリーズした「原宿リベン...
+       </h2>
+      </div>
+     </div>
+     <!-- 2段目start -->
+     <h1 class="text-2xl font-bold mb-6">
+      "NEXT" DAY - CyberAgent Developer Conference 2023
+     </h1>
+     <div class="grid grid-cols-4 gap-4 mb-8">
+      <div class="bg-white p-4 shadow">
+       <img alt="Opening Keynote CADC2023 featuring three speakers" class="mb-2" height="168" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-EkLb42job5k8Pfc3MdMUmp74.png?st=2024-05-03T10%3A19%3A54Z&amp;se=2024-05-03T12%3A19%3A54Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-05-02T23%3A40%3A25Z&amp;ske=2024-05-03T23%3A40%3A25Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=EsqLb1c3/2ZPNGoCNg8bz4q1KMJhrVSAmpmzx27Z3go%3D" width="300"/>
+       <h2 class="text-lg font-semibold">
+        Opening Keynote [CADC2023]
+       </h2>
+      </div>
+      <div class="bg-white p-4 shadow">
+       <img alt="Panel discussion with four participants" class="mb-2" height="168" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-ruCkItGmVaADTsw6gXuTD3dy.png?st=2024-05-03T10%3A19%3A53Z&amp;se=2024-05-03T12%3A19%3A53Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-05-02T23%3A28%3A49Z&amp;ske=2024-05-03T23%3A28%3A49Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=rl/n76BXPPil0j6KJ73jV/O9HGdki5WsNXwYLBAEnfw%3D" width="300"/>
+       <h2 class="text-lg font-semibold">
+        パネルディスカッション: バーチャル！6周年に向けた...
+       </h2>
+      </div>
+      <div class="bg-white p-4 shadow">
+       <img alt="Two speakers discussing CADVUI and its impact" class="mb-2" height="168" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-gfu9qnA5sUZknCLuWxHXjnXl.png?st=2024-05-03T10%3A19%3A49Z&amp;se=2024-05-03T12%3A19%3A49Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-05-02T23%3A52%3A51Z&amp;ske=2024-05-03T23%3A52%3A51Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=JggnCMyy9XbC8gXammtG8iS8cLV74B4eh2ILu6b290Y%3D" width="300"/>
+       <h2 class="text-lg font-semibold">
+        グラレコで解説！CADVUI：エイジングケアレシピを...
+       </h2>
+      </div>
+      <div class="bg-white p-4 shadow">
+       <img alt="Speaker discussing strategies for Ameba platform" class="mb-2" height="168" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-sSsOulEoQY3dXtF2RiaK66Ja/user-XZ7Av8ZH1bvGvI0GdH7WwbAs/img-bml6vjZlB9eB5iYmLJKFENxT.png?st=2024-05-03T10%3A19%3A53Z&amp;se=2024-05-03T12%3A19%3A53Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-05-02T23%3A39%3A00Z&amp;ske=2024-05-03T23%3A39%3A00Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=%2Bm2k3/myvkRp3XtyItEXT743rtrNxxwE0/lBrNunqDM%3D" width="300"/>
+       <h2 class="text-lg font-semibold">
+        基調講演10過去: 新卒2年目がシリーズした「原宿リベン...
+       </h2>
+      </div>
+     </div>
+     <!-- 2段目end -->
+   </body>
   <!-- end -->
 
   <style>
@@ -307,7 +287,7 @@ display: inline-block;
 を同時に使用した場合、iOSでは正しく動作しない
 */
 .fixed-bg {
-  height: 300px;
+  height: 453px;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -580,9 +560,14 @@ SP
     width: 100%;
   }
 }
+.mb-8 {
+  margin-top: 32px;
+}
   </style>
  </body>
 
+
+ 
  
 </html>
 
