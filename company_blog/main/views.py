@@ -6,7 +6,6 @@ from company_blog import db
 from company_blog.main.image_handler import add_featured_image
 
 from flask import Flask, render_template, request
-from model import predict_sentiment
 
 import pandas as pd
 import numpy as np
