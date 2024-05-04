@@ -25,16 +25,68 @@
     <div id="mask"></div>
     <!-- end -->
 
-    <div class="content">
-        <form action="/predict" method="POST">
-            <input type="range" name="name2" min="0" max="50">
-            <input type="range" name="name3" min="0" max="50">
-            <input type="range" name="name4" min="0" max="50">
-            <input type="range" name="name5" min="0" max="50">
-            <input type="range" name="name6" min="0" max="50">
-            <input type="submit" value='送信'>
-        </form>
+<!-- form start -->
+<head>
+    <title>Form Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body>
+    <div class="max-w-4xl mx-auto py-12">
+        <div class="bg-white p-8 shadow-lg rounded-lg">
+            <form action="/predict" method="POST">
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                        Webデザインが思い浮かばない悩み
+                    </label>
+                    <span>Low</span>
+                    <input type="range" class="input-range" name="name2" min="0" max="50">
+                    <span>High</span>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                        HTML全般に関する悩み
+                    </label>
+                    <span>Low</span>
+                    <input type="range" class="input-range" name="name3" min="0" max="50">
+                    <span>High</span>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                        Webサイトのパーツの配置に関する悩み(CSS)
+                    </label>
+                    <span>Low</span>
+                    <input type="range" class="input-range" name="name4" min="0" max="50">
+                    <span>High</span>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="web">
+                        Webサイトの色に関する悩み(CSS)
+                    </label>
+                    <span>Low</span>
+                    <input type="range" class="input-range" name="name5" min="0" max="50">
+                    <span>High</span>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="comment">
+                        エラーに関する悩み
+                    </label>
+                    <span>Low</span>
+                    <input type="range" class="input-range" name="name6" min="0" max="50">
+                    <span>High</span>
+                </div>
+                <div class="flex items-center justify-center">
+                    <input class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value='送信'>                    
+                </div>
+            </form>
+        </div>
     </div>
+</body>
+<!-- form end -->
 
     <style>
         @font-face {
@@ -42,7 +94,7 @@
             src: url("../../font/Raleway-4.101/") format(OTF);
         }
         body {
-            background-color: #D9D7D7;
+            background-color: #736F6E;
             font-family: "Geeksalon";
         }
         .text-decoration-none {
@@ -169,6 +221,49 @@
             object-fit: cover;
             height: 200px;
         }
+        .input-range {
+  -webkit-appearance: none; 
+  appearance: none;
+  cursor: pointer;
+  background: black;
+  height: 14px;
+  width: 82%;
+  border-radius: 10px;
+  border: solid 3px #dff1ff;
+  outline: 0;
+  &:focus {
+    box-shadow: 0 0 3px black;
+  }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: black;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+  }
+  &::-moz-range-thumb {
+    background: black;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+    border: none;
+  }
+  &::-moz-focus-outer {
+    border: 0;
+  }
+  &:active::-webkit-slider-thumb {
+    box-shadow: 0px 5px 10px -2px rgba(0, 0, 0, 0.3);
+  }
+}
+.bg-white {
+    width: 500px;
+    margin: 16% auto 0 auto;
+}
+.bg-green-500 {
+    background-color: #5379fa;
+}
         </style>
 
     <script>
